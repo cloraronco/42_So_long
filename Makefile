@@ -6,7 +6,7 @@
 #    By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/21 16:54:47 by clora-ro          #+#    #+#              #
-#    Updated: 2022/05/05 18:04:19 by clora-ro         ###   ########lyon.fr    #
+#    Updated: 2022/05/09 10:47:53 by clora-ro         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS		=	action.c \
 				checker_map_wall.c \
 				checker_map.c \
 				check_wall.c \
+				close.c \
 				main.c \
 				map_init.c \
 				map_read.c \
@@ -27,9 +28,7 @@ OBJS		= $(SRCS:.c=.o)
 
 CC			= gcc
 
-DEBUG	= 	-fsanitize=address -g3
 CFLAGS		= -Wall -Werror -Wextra
-# make && leaks -atExit -- ./so_long map.ber
 
 RM			= rm -f
 
@@ -44,11 +43,11 @@ minilibx	:
 			$(MAKE) -C minilibx
 
 $(NAME)		: $(addprefix objs/, $(OBJS)) libft/libft.a minilibx/libmlx.a
-			$(CC) $(CFLAGS) $(DEBUG) -o $(NAME) $^ -Lminilibx -lmlx -framework OpenGL -framework AppKit
+			$(CC) $(CFLAGS) -o $(NAME) $^ -Lminilibx -lmlx -framework OpenGL -framework AppKit
 
 objs/%.o	:	%.c includes/get_next_line.h includes/so_long.h libft/libft.h minilibx/mlx.h minilibx/mlx_int.h minilibx/mlx_new_window.h minilibx/mlx_opengl.h minilibx/mlx_png.h Makefile
 				@mkdir -p objs
-				$(CC) $(CFLAGS) $(DEBUG) -Iincludes -DBUFFER_SIZE=20 -c $< -o $@
+				$(CC) $(CFLAGS) -Iincludes -DBUFFER_SIZE=20 -c $< -o $@
 
 			
 clean		:
@@ -61,7 +60,5 @@ fclean		: clean
 			make fclean -C libft
 
 re			: fclean all
-			make re -C libft
-			make re -C minilibx
 
 .PHONY		: all clean re fclean libft minilibx

@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:02:16 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/05/05 18:03:43 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/05/09 10:48:43 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,8 @@ void	check_map(t_vars *mlx, t_map *map)
 	if (check_map_wall_hori(map) == 0 || check_map_wall_verti(map) == 0)
 		ft_close_error(mlx);
 	if (check_map_exit_player(map) == 0 || check_map_coin(map) == 0)
+		ft_close_error(mlx);
+	if (check_map_char(map) == 0)
 		ft_close_error(mlx);
 	if (check_geo(map) == 1)
 		ft_close_error(mlx);

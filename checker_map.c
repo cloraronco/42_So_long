@@ -6,11 +6,28 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:02:58 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/05/05 17:34:45 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/05/09 08:29:10 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	check_name(char *av, t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (av[i])
+		i++;
+	if (av[i - 4] != '.' || av[i - 3] != 'b' || av[i - 2] != 'e'
+		|| av[i - 1] != 'r')
+	{
+		free (map);
+		ft_putendl_fd("Error", 2);
+		return (0);
+	}
+	return (1);
+}
 
 int	check_map_hori(t_map *map)
 {
@@ -72,10 +89,3 @@ int	check_geo(t_map *map)
 		return (0);
 	return (1);
 }
-
-// int check_map_element(t_map *map)
-// {
-// 	if (NULL < 3)
-// 		return (0);
-// 	return (1);
-// }

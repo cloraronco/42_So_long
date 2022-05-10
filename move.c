@@ -6,11 +6,33 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 16:29:53 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/05/05 17:43:06 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/05/09 10:26:19 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+int	check_map_char(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map->map[i])
+	{
+		j = 0;
+		while (map->map[i][j])
+		{
+			if (!(map->map[i][j] == '1' || map->map[i][j] == '0'
+				|| map->map[i][j] == 'E' || map->map[i][j] == 'P'
+				|| map->map[i][j] == 'C'))
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
 
 void	move_up(t_vars *mlx, t_map *map)
 {

@@ -6,7 +6,7 @@
 /*   By: clora-ro <clora-ro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 08:42:46 by clora-ro          #+#    #+#             */
-/*   Updated: 2022/05/05 17:54:17 by clora-ro         ###   ########lyon.fr   */
+/*   Updated: 2022/05/09 09:03:43 by clora-ro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,29 @@ int	read_map(t_vars mlx, char c, int x, int y)
 	return (0);
 }
 
-void	load_image(t_vars *mlx, t_vars lenght)
+int	load_image(t_vars *mlx, t_vars lenght)
 {
 	mlx->img.wall = mlx_xpm_file_to_image(mlx->mlx, "./xpm/wall.xpm",
 			&lenght.lenght, &lenght.lenght);
 	if (!mlx->img.wall)
-		ft_putendl_fd("WALL : fail", 2);
+		return (ft_close_error1(mlx));
 	mlx->img.floor = mlx_xpm_file_to_image(mlx->mlx, "./xpm/floor.xpm",
 			&lenght.lenght, &lenght.lenght);
 	if (!mlx->img.floor)
-		ft_putendl_fd("FLOOR : fail", 2);
+		return (ft_close_error2(mlx));
 	mlx->img.piece = mlx_xpm_file_to_image(mlx->mlx, "./xpm/piece.xpm",
 			&lenght.lenght, &lenght.lenght);
 	if (!mlx->img.piece)
-		ft_putendl_fd("PIECE : fail", 2);
+		return (ft_close_error3(mlx));
 	mlx->img.exit = mlx_xpm_file_to_image(mlx->mlx, "./xpm/exit.xpm",
 			&lenght.lenght, &lenght.lenght);
 	if (!mlx->img.exit)
-		ft_putendl_fd("EXIT : fail", 2);
+		return (ft_close_error4(mlx));
 	mlx->img.position = mlx_xpm_file_to_image(mlx->mlx, "./xpm/position.xpm",
 			&lenght.lenght, &lenght.lenght);
 	if (!mlx->img.position)
-		ft_putendl_fd("POSITION : fail", 2);
+		return (ft_close_error5(mlx));
+	return (0);
 }
 
 void	build_map(t_vars *mlx, t_map *map, t_vars lenght)
