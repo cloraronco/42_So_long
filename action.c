@@ -12,6 +12,7 @@
 
 #include "../includes/so_long.h"
 
+// For Linux
 int	my_key_code(int keycode, t_vars *mlx)
 {
 	t_map	*map;
@@ -19,17 +20,37 @@ int	my_key_code(int keycode, t_vars *mlx)
 	map = mlx->map;
 	if (keycode == 53)
 		ft_close(mlx);
-	if (keycode == 13 && check_wall_up(map) == 1)
+	if (keycode == 'w' && check_wall_up(map) == 1)
 		mlx->up = 1;
-	if (keycode == 1 && check_wall_down(map) == 1)
+	if (keycode == 's' && check_wall_down(map) == 1)
 		mlx->down = 1;
-	if (keycode == 0 && check_wall_left(map) == 1)
+	if (keycode == 'a' && check_wall_left(map) == 1)
 		mlx->left = 1;
-	if (keycode == 2 && check_wall_right(map) == 1)
+	if (keycode == 'd' && check_wall_right(map) == 1)
 		mlx->right = 1;
 	change_map(mlx, map);
 	return (keycode);
 }
+
+// For OS
+// int	my_key_code(int keycode, t_vars *mlx)
+// {
+// 	t_map	*map;
+
+// 	map = mlx->map;
+// 	if (keycode == 53)
+// 		ft_close(mlx);
+// 	if ((keycode == 13 || keycode == 126 ) && check_wall_up(map) == 1)
+// 		mlx->up = 1;
+// 	if ((keycode == 1 || keycode == 125) && check_wall_down(map) == 1)
+// 		mlx->down = 1;
+// 	if ((keycode == 0 || keycode == 123) && check_wall_left(map) == 1)
+// 		mlx->left = 1;
+// 	if ((keycode == 2 || keycode == 124) && check_wall_right(map) == 1)
+// 		mlx->right = 1;
+// 	change_map(mlx, map);
+// 	return (keycode);
+// }
 
 void	ft_close(t_vars *mlx)
 {
