@@ -19,6 +19,8 @@
 # include "../minilibx/mlx.h"
 # include "../libft/libft.h"
 # include "get_next_line.h"
+# include <X11/Xlib.h>
+# include <X11/keysym.h>
 
 typedef struct s_map
 {

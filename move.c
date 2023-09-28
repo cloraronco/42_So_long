@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 int	check_map_char(t_map *map)
 {
@@ -36,11 +36,9 @@ int	check_map_char(t_map *map)
 
 void	move_up(t_vars *mlx, t_map *map)
 {
-	int	i;
 	int	x;
 	int	y;
 
-	i = 0;
 	x = map->pos_x;
 	y = map->pos_y;
 	if (map->map[x - 1][y] == 'E' && check_map_coin(map) == 0)
@@ -59,11 +57,9 @@ void	move_up(t_vars *mlx, t_map *map)
 
 void	move_down(t_vars *mlx, t_map *map)
 {
-	int	i;
 	int	x;
 	int	y;
 
-	i = 0;
 	x = map->pos_x;
 	y = map->pos_y;
 	if (map->map[x + 1][y] == 'E' && check_map_coin(map) == 0)
@@ -82,11 +78,9 @@ void	move_down(t_vars *mlx, t_map *map)
 
 void	move_left(t_vars *mlx, t_map *map)
 {
-	int	i;
 	int	x;
 	int	y;
 
-	i = 0;
 	x = map->pos_x;
 	y = map->pos_y;
 	if (map->map[x][y - 1] == 'E' && check_map_coin(map) == 0)
@@ -105,11 +99,9 @@ void	move_left(t_vars *mlx, t_map *map)
 
 void	move_right(t_vars *mlx, t_map *map)
 {
-	int	i;
 	int	x;
 	int	y;
 
-	i = 0;
 	x = map->pos_x;
 	y = map->pos_y;
 	if (map->map[x][y + 1] == 'E' && check_map_coin(map) == 0)

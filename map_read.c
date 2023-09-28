@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 int	read_map(t_vars mlx, char c, int x, int y)
 {
@@ -61,7 +61,7 @@ void	build_map(t_vars *mlx, t_map *map, t_vars lenght)
 	int	j;
 
 	i = 0;
-	while (map->map[i] != '\0')
+	while (map->map[i])
 	{
 		j = 0;
 		while (map->map[i][j] != '\0')
