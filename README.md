@@ -5,8 +5,8 @@ and some other very basic gameplay elements.
 
 ![](https://github.com/cloraronco/42_So_long/blob/master/solong_demoGIF.gif)
 
-## Installation
 ***
+## Installation
 $ git clone https://github.com/cloraronco/42_So_long
 $ make
 For a little map :
