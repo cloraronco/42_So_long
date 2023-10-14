@@ -10,7 +10,7 @@ Its purpose is to make you work with textures, sprites, and some other very basi
 2. [Play](#play)
 ***
 ## Installation
-'''
+```
 $ git clone https://github.com/cloraronco/42_So_long  
 $ make  
 For a little map :  
