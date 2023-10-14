@@ -12,11 +12,16 @@ Its purpose is to make you work with textures, sprites, and some other very basi
 ## Installation
 ```
 $ git clone https://github.com/cloraronco/42_So_long  
-$ make  
+$ make
+```
 For a little map :  
-$ ./so_long map/map.ber  
+```
+$ ./so_long map/map.ber
+```
 For a big map :  
-$ ./so_long map/map1.ber  
+```
+$ ./so_long map/map1.ber
+```
 ***
 ## Play
 To move, press the keys W, A, S, D.  
