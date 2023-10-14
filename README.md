@@ -5,8 +5,14 @@ and some other very basic gameplay elements.
 
 ![](https://github.com/cloraronco/42_So_long/blob/master/solong_demoGIF.gif)
 
-## Launch the game
-a la racine du programme, lancer la commande $make
+## Installation
+***
+$ git clone https://github.com/cloraronco/42_So_long
+$ make
+For a little map :
+$ ./so_long map/map.ber
+For a big map :
+$ ./so_long map/map1.ber
 
 ## Play
 To move, press the keys W, A, S, D.
